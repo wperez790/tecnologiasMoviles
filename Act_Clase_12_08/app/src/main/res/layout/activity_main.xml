@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity"
+    android:background="@color/colorWhite"
+    android:weightSum="1"
+    >
+
+    <ImageView
+        android:layout_width="@dimen/widthImage"
+        android:layout_height="@dimen/heightImage"
+        android:layout_gravity="center"
+        android:layout_marginTop="50dp"
+        android:src="@drawable/ic_gym_free_download_png_vector_clipart_psd_peoplepngcom_free_gym_png_512_435"
+        />
+
+        <EditText
+            android:id="@+id/input_user"
+            android:inputType="textEmailAddress"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="30dp"
+            android:singleLine="true"
+            android:hint="@string/hint_user"
+            android:nextFocusDown="@+id/input_password"
+            />
+
+
+
+
+        <EditText
+            android:id="@+id/input_password"
+            android:inputType="textPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="30dp"
+            android:hint="@string/hint_password"
+            android:nextFocusDown="@id/button_login"
+            />
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_weight="1"/>
+
+    <Button
+        android:id="@+id/button_login"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:text="INICIAR SESION"
+        android:onClick="showSnackBar"
+        android:textSize="20dp"
+        android:textColor="@color/colorWhite"
+        android:background="@color/colorPrimaryDark"
+
+        />
+
+
+</LinearLayout>

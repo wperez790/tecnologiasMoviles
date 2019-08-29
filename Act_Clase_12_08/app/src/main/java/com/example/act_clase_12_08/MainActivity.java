@@ -7,14 +7,14 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Toast;
 
-import com.google.android.material.snackbar.Snackbar;
+import com.example.act_clase_12_08.model.Usuario;
 
 public class MainActivity extends AppCompatActivity {
 
     private Button btn;
-    private EditText input;
+    private EditText inputUser;
+    private EditText inputPassword;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,7 +24,8 @@ public class MainActivity extends AppCompatActivity {
         setTitle("Gym");
 
         btn = findViewById(R.id.button_login);
-        input = findViewById(R.id.input_user);
+        inputUser = findViewById(R.id.input_user);
+        inputPassword= findViewById(R.id.input_password);
 
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -35,10 +36,15 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void login(View view){
-        String user = input.getText().toString();
 
-        Intent mainIntent = new Intent(MainActivity.this , MenuActivity.class);
-        mainIntent.putExtra("Usuario", user);
-        startActivity(mainIntent);
+        Usuario u =  new Usuario(
+                inputUser.getText().toString(),
+                inputPassword.getText().toString());
+
+        Intent listIntent = new Intent(MainActivity.this, MenuActivity.class);
+        listIntent.putExtra(Constants.USUARIO, u);
+        startActivity(listIntent);
+
+
     }
 }
